@@ -1,1 +1,62 @@
-theme: jekyll-theme-architect
+# highlighter: pygments
+highlighter: rouge
+
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+# markdown: kramdown
+# kramdown:
+#     input: GFM
+#     syntax_highlighter: rouge
+
+plugins: [jekyll-paginate]
+paginate: 7
+paginate_path: "page:num"
+layout: post
+permalink: /:categories/:title
+excerpt_separator: "[-----]"
+
+# mode: dev
+mode: production
+url: https://fqyusher.github.io/
+devurl: http://localhost:1234/
+name: Yu'sBlog
+title: Yusher's Blog
+description: "<p>If you like, write it down</p>
+<p>If you want, go for it now</p>"
+
+my:
+    displayName: yusher
+    realName: Yu Hang
+    realName_cn: 余航
+    jobTitle: "Job: PHP Coder"
+    hobby: "Hobby: Coding, Reading, Music."
+    motto: "Motto: Just do whatever you like."
+    contact:
+        email: fqyusher@gmail.com
+        twitter: http://www.twitter.com/yusher14
+        github: http://www.github.com/fqyusher
+        address:
+            country: China
+            state: Fujian
+            city: Fuzhou
+        website: http://yusher.vip
+    skills:
+        backend: ["PHP", "MySQL", "Go", "Redis", "Laravel"]
+        tools: ["Emacs", "Sublime Text", "Git | Github", "Linux"]
+
+collections:
+    qqGroupGuide:
+        output: true
+
+defaults:
+  - scope:
+        path: ""
+        type: "posts"
+    values:
+        excerpt: "{{ page.content }} | slice: 0 300"
+  - scope:
+        path: ""
+        type: "qqGroupGuide"
+    values:
+        layout: markdownreader_bare
