@@ -2,7 +2,7 @@ source 'https://rubygems.org/'
 
 gem 'jekyll'
 gem 'jekyll-paginate'
-gem 'redcarpet', '~> 3.2.3'
+#gem 'redcarpet', '~> 3.2.3'
 gem 'jekyll-watch', '~> 1.2.1'
 gem 'pygments.rb'
 gem 'kramdown'
