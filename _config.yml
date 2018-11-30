@@ -19,7 +19,7 @@ excerpt_separator: "[-----]"
 # mode: dev
 mode: production
 url: https://fqyusher.github.io/
-devurl: http://localhost:1234/
+devurl: http://localhost:4000/
 name: Yu'sBlog
 title: Yusher's Blog
 description: "<p>If you like, write it down</p>

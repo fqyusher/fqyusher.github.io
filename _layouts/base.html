@@ -4,6 +4,10 @@
 <html>
 <head>
     {% include head_base.html %}
+    {% if site.mode == 'production' %}
+        {% include google_analytics.html %}
+        {% include baidu_statistics.html %}
+    {% endif %}
 </head>
 
 <body>

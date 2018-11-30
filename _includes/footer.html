@@ -12,7 +12,7 @@
                     </address>
 
                     <ul class="col-lg-6 col-md-6 col-sm-6">
-                        <li class="twitter"><i class="fa fa-twitter"></i> <a href="{{ my.contact.twitter }}"> &nbsp;&nbsp;{{ my.contact.twitter }}</a></li>
+                        <li class="twitter"><i class="fa fa-twitter"></i> <a href="{{ my.contact.twitter }}"> &nbsp;&nbsp;{{ my.contact.twitter }} </a></li>
                         <li class="email"><i class="fa fa-envelope"></i> <a href="mailto:{{ my.contact.email }}"> &nbsp;&nbsp;{{ my.contact.email }}</a></li>
                         <li class="github"><i class="fa fa-github"></i> <a href="{{ my.contact.github }}"> &nbsp;&nbsp;{{ my.contact.github }}</a></li>
                     </ul>
@@ -34,8 +34,3 @@
 </footer>
 
 <script type="text/javascript" src="{{crturl}}javascripts/base.js"></script>
-
-{% if site.mode != 'dev' %}
-<!-- baidu统计 -->
-<script type="text/javascript" src="{{crturl}}javascripts/baidu_statistics.js"></script>
-{% endif %}
