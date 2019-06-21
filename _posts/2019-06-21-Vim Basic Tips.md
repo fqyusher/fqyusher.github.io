@@ -127,7 +127,7 @@ excerpt: "Vim基础命令整理"
 
   **`:s /{search_str}/{replace_str}/g`**: 在**当前行**查找匹配项并替换
 
-  **`%s /{search_str}/{replace_str}/g`**: **全文**查找匹配项并替换
+  **`:%s /{search_str}/{replace_str}/g`**: **全文**查找匹配项并替换
 
 - **查找**
 
