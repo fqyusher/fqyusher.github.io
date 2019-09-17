@@ -2,7 +2,7 @@
 layout: post
 title:  "Apache vs Nginx(实际考虑因素对比)"
 date:   2019-08-21 16:55:46 +0800
-category: translation
+category: 翻译
 tags: [server]
 excerpt: "介绍Apache及Nginx的特性，并进行对比"
 ---

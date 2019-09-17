@@ -2,7 +2,7 @@
 layout: post
 title:  "Vim基础命令整理"
 date:   2019-06-21 10:22:46 +0800
-category: skill
+category: [技能, 原创]
 tags: [vim]
 excerpt: "Vim基础命令整理"
 ---

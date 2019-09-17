@@ -2,7 +2,7 @@
 layout: post
 title:  "MySQL 8.0 新特性--CTE介绍"
 date:   2018-11-28 14:55:46 +0800
-category: translation
+category: 翻译
 tags: [mysql]
 excerpt: "介绍MySQL 8.0新特性--公用表表达式(CTE)的用法"
 ---

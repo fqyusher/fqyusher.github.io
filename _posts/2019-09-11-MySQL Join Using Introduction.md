@@ -2,7 +2,7 @@
 layout: post
 title:  "MySQL Join的使用介绍"
 date:   2019-09-11 16:22:46 +0800
-category: skill
+category: 技能
 tags: [mysql]
 excerpt: "MySQL Join使用方式介绍"
 ---
