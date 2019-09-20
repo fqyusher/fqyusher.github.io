@@ -13,7 +13,7 @@ plugins: [jekyll-paginate]
 paginate: 7
 paginate_path: "page:num"
 layout: post
-permalink: /:categories/:title
+permalink: /:year/:month/:day/:title
 excerpt_separator: "[-----]"
 
 # mode: dev

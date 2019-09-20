@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "MySQL-count(1), count(*), count(column)对比"
+title:  "MySQL-count语法使用与对比"
 date:   2019-09-17 15:22:46 +0800
 category: [技能, 原创]
 tags: [mysql]
-excerpt: "MySQL-count(1), count(*), count(column)对比"
+excerpt: "MySQL-count语法使用与对比"
 ---
 
 # 概述
