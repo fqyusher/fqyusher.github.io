@@ -22,11 +22,17 @@
                     {% if page.tags %}
                     <ul class="tags clearfix">
                         {% for tag in page.tags %}
-                        <li><i class="fa fa-tag"></i> {{ tag }}</li>
+                        <li style="list-style-type:none;"><i class="fa fa-tag"></i> {{ tag }}</li>
                         {% endfor %}
                     </ul>
                     {% endif %}
-                    <p id="postMeta">posted on {{ page.date | date_to_string }} under category <a href="{{crturl}}category/">{{ page.categories[0] }}</a></p>
+                    <p id="postMeta">
+                        posted on {{ page.date | date_to_string }} under category 
+                        {% for cate in page.categories %}
+                            <a href="{{crturl}}category/"> {{ cate }}</a>
+                        {% endfor %}
+                        <!-- <a href="{{crturl}}category/">{{ page.categories[0] }}</a> -->
+                    </p>
 
                 </header>
 
