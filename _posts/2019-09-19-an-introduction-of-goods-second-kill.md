@@ -41,16 +41,18 @@ excerpt: "秒杀产品的理解与应对"
 -   **读写分离:** 将秒杀商品信息缓存至Redis，提供读实例；根据`goods_status`状态来判断抢购是否开始；根据`goods_left=goods_count-goods_bought_num`的值来判断是否允许下单。
 
     ```json
+    // 秒杀商品
     {
         "goods_count": 100, // 商品库存数量
         "goods_status": 0, // 商品抢购状态
-        "goods_bought_num": 0 // 商品已抢数量
+        "goods_bought_num": 0, // 商品已抢数量
     }
     ```
 
 -   **库存扣量:** 下单成功后，需要对库存量进行更新，这里使用Redis的Lua脚本来保证多个命令的原子性。
 
     ```lua
+    -- 库存更新lua脚本
     local key = ARGV[1];
     local buy_num = tonumber(ARGV[2]);
     --[[ 若商品量大，则传入以下参数，供异步入库
@@ -59,7 +61,7 @@ excerpt: "秒杀产品的理解与应对"
     ]]
     
     if not buy_num or buy_num == 0 then
-    	return 0;
+        return 0;
     end
     
     local goods_vals = redis.call("HMGET", key, "goods_count", "goods_bought_num");
@@ -67,17 +69,17 @@ excerpt: "秒杀产品的理解与应对"
     local goods_bought_num = tonumber(goods_vals[2]);
     
     if not goods_count or not goods_bought_num then
-    	return 0;
+        return 0;
     end
     
     if buy_num <= goods_count - goods_bought_num then
-    	redis.call("HINCRBY", key, "goods_bought_num", buy_num);
+        redis.call("HINCRBY", key, "goods_bought_num", buy_num);
         --[[ 异步入库代码
         local order_info = json.encode({uid: user_id, goods_id: goods_id, buy_num: buy_num, order_time: os.time()});
         redis.call("LPUSH", "order_list:"..goods_id, order_info);
         ]]
         -- 
-    	return buy_num;
+        return buy_num;
     end
     return 0;
     ```
@@ -89,10 +91,10 @@ excerpt: "秒杀产品的理解与应对"
     ```json
     // 订单详情 order_list:good_id
     {
-    	"uid": 123, // 用户id
-    	"goods_id": 456, // 商品id
-    	"buy_num": 1, // 购买数量
-    	"order_time": 1234567890, // 下单时间
+        "uid": 123, // 用户id
+        "goods_id": 456, // 商品id
+        "buy_num": 1, // 购买数量
+        "order_time": 1234567890, // 下单时间
         // 其他信息
     }
     ```
