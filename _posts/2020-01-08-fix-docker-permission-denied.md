@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "docker用户权限解决方案"
+title:  "Solution:docker用户权限解决方案"
 date:   2020-01-08 19:22:11 +0800
 category: [技能, 修复]
 tags: [docker]
